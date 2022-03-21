@@ -31,7 +31,14 @@ print(pca_tf.explained_variance_ratio_.numpy().sum())
 ```
 
 ## Limitations
-The only deviation from the *scikit-learn* implementation is that this Tensorflow-based implementation does not check for or deals with `NaN` values in your data. Also, the amount of data that can be fit with this implementation depends on the amount of VRAM of your GPU. I got it to work on a Quadro RTX 8000 with a batch size of 512 and about 800,000 features.
+This implementation is largely a line-by-line reimplementation of *scikit-learn*'s implementation, apart from the following elements:
+
+* It does not check for or deals with `NaN` values in your data;
+* It has no option to whiten your data;
+* Doesn't do any data validation like *scikit-learn*;
+* The components are stored as a tensor of shape `n_features` x `n_components` (instead of the other way around, like *scikit-learn*).
+
+Also, the amount of data that can be fit with this implementation depends on the amount of VRAM of your GPU. I got it to work on a Quadro RTX 8000 with a batch size of 512 and about 800,000 features.
 
 Given the results of my (admittedly limited) tests, this implementation is identical to the implementation by *scikit-learn*, up to a sign flip of the components (which is [not a problem](https://stackoverflow.com/questions/21115669/scikit-learn-pca-matrix-transformation-produces-pc-estimates-with-flipped-signs)).
 
