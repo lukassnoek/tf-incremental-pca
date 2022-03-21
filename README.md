@@ -8,6 +8,7 @@ An example using random data:
 import tensorflow as tf
 from tqdm import tqdm
 from tensorflow.data import Dataset
+from tfpca import TFIncrementalPCA
 
 N = 2048   # total nr of samples
 K = 50000  # number of features
