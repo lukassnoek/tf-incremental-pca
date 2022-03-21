@@ -1,5 +1,5 @@
 # tf-incremental-pca
-A Tensorflow (2.0) implementation of incremental PCA. Based on the [implementation](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.IncrementalPCA.html) of *scikit-learn*, but about 15-20 times faster when dealing with many features (i.e., *K* > 10,000). 
+A Tensorflow (2.0) implementation of incremental PCA. Based on the [implementation](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.IncrementalPCA.html) of *scikit-learn*, but about 15-20 times faster when dealing with many features (i.e., *K* > 10,000) and using a reasonably modern GPU. 
 
 ## Example usage:
 An example using random data:
