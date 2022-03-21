@@ -20,7 +20,7 @@ dset = dset.batch(batch_size)
 
 pca_tf = TFIncrementalPCA(n_components=n_comp)
 
-for i, X in tqdm(enumerate(dset)):
+for i, X in enumerate(tqdm(dset)):
     # If your data is not a 2D N (obs) x K (features) array,
     # make sure to reshape it: `X = tf.reshape(X, (batch_size, -1))`
     X = tf.squeeze(X)
